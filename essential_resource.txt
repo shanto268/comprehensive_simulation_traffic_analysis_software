@@ -1,0 +1,10 @@
+QLearning: https://www.youtube.com/watch?v=wrBUkpiRvCA&list=PLZbbT5o_s2xoWNVdDudn51XM8lOuZ_Njv&index=11
+NN: https://www.youtube.com/watch?v=gZmobeGL0Yg&list=PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU
+
+Code VI: https://deeplizard.com/learn/video/QK_PP_2KgGE
+
+Others:
+https://builtin.com/data-science/reinforcement-learning-python
+https://blog.floydhub.com/an-introduction-to-q-learning-reinforcement-learning/
+https://visualstudiomagazine.com/articles/2018/10/18/q-learning-with-python.aspx
+https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/

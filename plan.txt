@@ -1,0 +1,45 @@
+#========= Sim set up ===========
+
+(DONE) Car distribution: 100 HVs, 1 AV
+(DONE) AV Behavior initially: Baseline HV Like
+
+Simulation terminates when:
+(DONE) AV makes 10 cycles 
+
+Implement Reinforcement Learning Regime 1:
+-> optimize P(lc)
+-> reward fastest time taken to finish (record sim time)
+-> allow AV to change its own P(lc)
+
+Implement Reinforcement Learning Regime 2:
+-> optimize v
+-> penalize if speed less than average speed
+-> allow AV to change its own v_max
+
+============= to do =============
+> environment from road.py
+> qlearning.py -> uses batch mode and environment file to train agents
+
+============== PLAN =============
+1) think of simulation scheme (state, actions, rewards, termination, outputs) -> Done!
+2) implement changes to current software to incorporte Qlearning
+
+> set up/think about simulation in episodic learning format
+    gameEngine = nagel.py
+    driver = startLearning.py
+
+(DONE) task 1) make nagel.py in class format
+task 2) nagel.py -> environment format
+task 3) gameEngine in batch mode
+
+    > implement changes to agent in car.py (add agent_car.py)
+    > create a running model
+    > batch mode functionality
+
+Try taxiSim set up
+
+3) use VI to populate Qtable
+4i) get results
+5) write report and interpretations
+6) learn CNN and Deep Qlearning
+7) change VI to NN system

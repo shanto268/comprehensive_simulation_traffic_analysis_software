@@ -1,0 +1,14 @@
+Develop front end iterface using QT Design
+        >>Read inputs from the interface and record them in a csv file
+                >>> file name: input.csv
+                >>> file directory: Python_New/config/
+>> After input.csv has been created, execute ashell script
+        >>> shell script changes the names of the the car.py, road.py, and simulationManager.py files
+        >>> all files should import data from input.csv
+        >>> infoDisplayer file updated to fit the simulation situations
+        >>> run the actual simulation
+>> default all the files to a regular state
+>> GUI for analysis 
+        >>> pdf report
+
+

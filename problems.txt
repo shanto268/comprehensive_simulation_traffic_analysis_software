@@ -1,0 +1,10 @@
+# number of discrete states
+# state spaces
+# does seed need to be random or not
+# reward function
+# sim set up
+# slow with graphics rendering need batch mode
+# VI vs ANN
+
+$obs: probablity and time test last night
+$interpretation: hidden patterns of traffic + explanation (thought experiment)
