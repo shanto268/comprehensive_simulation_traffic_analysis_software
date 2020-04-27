@@ -14,9 +14,17 @@ the concepts of Cellular Automata and perform data analysis and visualization.
 
 This software was designed under the supervision of Dr. Jia Li using inspiration from Nagel-Schrekenberg's Cellular Automata Rules for Traffic flow. The software can be used to simulate traffic for many different types of car and traffic situations and record all the important traffic-flow parameters and allows the user to track customized parameters as well. The software also comes with a data analysis and visualization package that helps the user make sense of the data.
 
-### Current Version: 0.1
+### Current Version: 0.2
 
-The current version of the software deals with simulating heterogeneous traffic flow of Autonomous Vehicles (AVs) and Human-driven Vehicles (HVs) on a three lane circular road. The software has three different models of AVs that is being used in two experiments in a research project led by Dr Li. The first experiment deals with analyzing the traffic flow of this heterogenous mix at three fixed densities: low, critical and high for the three different cases of AV models. The second experiment involves increasing the system density every N time steps till jam density is established and analyzing the fundamental diagram for the three different models. For the purpose of the research, the software looked heavily into self-organized clustering and lane formation phenomenon.
+#### Customization Abilities
+
+The current version of the software deals with simulating heterogeneous traffic flow of Autonomous Vehicles (AVs) and Human-driven Vehicles (HVs) on a three lane circular road. The software has three different models of AVs that is being used in two experiments in a research project led by Dr Li. Through changes in the car.py and road.py files, multiple new models of AVs can be introduced and tested. The software allows simulation traffic with both constant density and increasing density (to generate Fundamental Diagram) the density settings can be changed in simulationManager.py file. 
+
+#### New Version: 0.3
+The next version will have a GUI enabled customization screen before each simulation and direct analysis features within the same framework. 
+
+#### New Version: 1.0
+A version of a Reinforced Learning algorithm applied to train the AV is currently in the works in one of private repository, I plan on making that public as soon as I am done writing a paper using that version. I wanted to include this news in this readme just to inform y'all that Reinforced Learning regimes can be easily applied on to this framework.
 
 ## Summary of Files and Directories
 The following outlines all the relevant directories and files for the software.
@@ -53,20 +61,6 @@ This code decides how traffic is generated in the simulation.
 
 **"draft_2" directory:** It contains all the raw data and results from the simulation experiments.
 
-## Control Flow of The Program
-                     .-> car.py  <----> road.py  <-.       <--------.
-                     |                                 |                     |
-             .->[simulation object files(back end)]--> trafficGenerator.py                   .----------------------------> combined_plot_exp1.py
-             |                                   ^                        ^                         /
-     case.py --> nagel.py                                      |                       |----------> data.txt----------------------------> plot_exp1.py
-             |                                   |                |                         \
-             .->[visualization files(front end)] v                        |                          .----------------------------> plot_exp2.py
-             |                 \                        |------------------|
-             |                    |             simulationManager.py
-             |                   |             ^
-             v                     v                 |
-      infoDisplayer.py <------> representation.py /
-
 ## Installation
 Install the following libraries for python.
 ```bash
@@ -75,7 +69,18 @@ pip install matplotlib
 pip install pygame
 ```
 
-## Author Comments
-This program is really specific to our research project and I don't believe the running mechanism for this current version should be included since the simulation framework is very precise to fit our needs. I highly recommend you check out this repositoryof mine - [Traffic Analysis and Simulation Software](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software) to use the framework of this software but for more customized needs.
+## Usage
 
+To run the simulation in batch mode execute the following command in the base directory.
+```python
+python3 gameEngine.py batch
+```
+
+To run the simulation in GUI mode, execute the following command in the base directory.
+```python
+python3 gameEngine.py gui
+```
+
+Use the plot python files and change the directory sturcture for the input files to look at the analysis report of the simulation.
+**The next version would resolve this nasty directory change issue. Sorry about this for the time being. ** 
 
