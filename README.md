@@ -29,7 +29,7 @@ The next version will have a GUI enabled customization screen before each simula
 
 ![GUI3](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/GUI3.png)
 
-#![GUI4](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/GUI4.png)
+![GUI4](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/GUI4.png)
 
 ![GUI5](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/GUI4.png)
 
