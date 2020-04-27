@@ -36,45 +36,45 @@ The next version will have a GUI enabled customization screen before each simula
 ![GUI6](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/gui3.png)
 
 ### NEW VERSION: 1.0
-A VERSION OF A REINFORCED LEARNING ALGORITHM APPLIED TO TRAIN THE AV IS CURRENTLY IN THE WORKS IN ONE OF PRIVATE REPOSITORY, I PLAN ON MAKING THAT PUBLIC AS SOON AS I AM DONE WRITING A PAPER USING THAT VERSION. I WANTED TO INCLUDE THIS NEWS IN THIS README JUST TO INFORM Y'ALL THAT REINFORCED LEARNING REGIMES CAN BE EASILY APPLIED ON TO THIS FRAMEWORK.
+A version of a reinforced learning algorithm applied to train the av is currently in the works in one of private repository, I plan on making that public as soon as I am done writing a paper using that version. I wanted to include this news in this readme just to inform y'all that reinforced learning regimes can be easily applied on to this framework.
 
 ## SUMMARY OF FILES AND DIRECTORIES
-THE FOLLOWING OUTLINES ALL THE RELEVANT DIRECTORIES AND FILES FOR THE SOFTWARE.
+The following outlines all the relevant directories and files for the software.
 
-**BASE DIRECTORY:** THIS IS THE FOLDER WHERE ALL THE DIRECTORIES ARE FOUND.
-- NAGEL.PY
- THIS CODE IS THE INITIATOR OF THE ENTIRE SOFTWARE. IT STARTS THE SIMULATION ENGINE RUNNING ON PYGAME AND RETURNS CONTROL TO THE REST OF THE PROGRAM FILES.
-- REPRESENTATION.PY
-THIS CODE IS RESPONSIBLE FOR THE VISUALIZATION OF THE ROAD, CAR, AND INFORMATION IN THE PYGAME WINDOW.
-- INFODISPLAYER.PY
-THIS CODE TAKES DATA FROM THE BACK END OF THE SOFTWARE AND DISPLAYS THAT INFORMATION ON THE PYGAME WINDOW BY SENDING THAT DATA TO THE REPRESENTATION.PY FILE. IT ALSO RECORDS ALL THE PARAMETERS OF INTEREST IN THE TEXT FILES.
-- PLOT_EXP1.PY
-THIS CODE PRODUCES ALL THE PLOTS NEEDED FOR EXPERIMENT 1 FROM THE RAW DATA TEXT FILE.
-- PLOT_EXP2.PY
-THIS CODE PRODUCES ALL THE PLOTS NEEDED FOR EXPERIMENT 2 FROM THE RAW DATA TEXT FILE.
-- COMBINED_PLOT_EXP1.PY
-THIS CODE MAKES PLOT THAT NEEDS INPUT FROM EXPERIMENT 1 TEST CASES USING THE RAW TEXT DATA FILES.
-- SIMULATIONMANAGER.PY
-THIS CODE IS RESPONSIBLE FOR UPDATING THE TRAFFIC FLOW SIMULATIONS. IT CONSTANTLY TRANSFERS CONTROL BACK AND FORTH FROM THE CAR.PY, ROAD.PY, REPRESENTATION.PY AND INFODISPLAYER.PY FILE.
+**base directory:** this is the folder where all the directories are found.
+- nagel.Py
+ This code is the initiator of the entire software. It starts the simulation engine running on pygame and returns control to the rest of the program files.
+- representation.Py
+This code is responsible for the visualization of the road, car, and information in the pygame window.
+- infodisplayer.Py
+This code takes data from the back end of the software and displays that information on the pygame window by sending that data to the representation.Py file. It also records all the parameters of interest in the text files.
+- plot_exp1.Py
+This code produces all the plots needed for experiment 1 from the raw data text file.
+- plot_exp2.Py
+This code produces all the plots needed for experiment 2 from the raw data text file.
+- combined_plot_exp1.Py
+This code makes plot that needs input from experiment 1 test cases using the raw text data files.
+- simulationmanager.Py
+This code is responsible for updating the traffic flow simulations. It constantly transfers control back and forth from the car.Py, road.Py, representation.Py and infodisplayer.Py file.
 
-**"CONFIG" DIRECTORY:** THIS DIRECTORY HOLDS FILES IN CHARGE OF ROAD/TRAFFIC SITUATIONS.
-- CASE.PY
-THIS FILE DESCRIBES THE DIMENSIONS OF THE PYGAME WINDOW AND THE TYPE OF ROAD/TRAFFIC CONDITION TO BE SIMULATED.
+**"Config" directory:** this directory holds files in charge of road/traffic situations.
+- case.Py
+This file describes the dimensions of the pygame window and the type of road/traffic condition to be simulated.
 
-**SIMULATION DIRECTORY:** THIS DIRECTORY HOLDS FILES THAT DESCRIBE OOP CODE FILES.
-- CAR.PY
-THIS CODE CREATES AN OBJECT CALLED CAR WITH CERTAIN PROPERTIES AND FUNCTIONS THAT DESCRIBES THE VEHICLES BEHAVIOR.
-- ROAD.PY
-THIS CODE CREATES AN OBJECT CALLED ROAD WITH CERTAIN PROPERTIES AND FUNCTIONS THAT DESCRIBES THE RULES THAT VEHICLES INTERACTING WITH THE ROAD SHOULD ABIDE BY.
-- SPEEDLIMITS.PY
-THIS CODE CREATES A PROVISION TO MAKE TRAFFIC LIGHTS OR DAMAGED ROAD CONDITIONS.
-- TRAFFICGENERATORS.PY
-THIS CODE DECIDES HOW TRAFFIC IS GENERATED IN THE SIMULATION.
+**simulation directory:** this directory holds files that describe oop code files.
+- car.Py
+This code creates an object called car with certain properties and functions that describes the vehicles behavior.
+- road.Py
+This code creates an object called car with certain properties and functions that describes the vehicles behavior.
+- speedlimits.Py
+This code creates a provision to make traffic lights or damaged road conditions.
+- trafficgenerators.Py
+This code decides how traffic is generated in the simulation.
 
-**"DRAFT_2" DIRECTORY:** IT CONTAINS ALL THE RAW DATA AND RESULTS FROM THE SIMULATION EXPERIMENTS.
+**"DRAFT_2" DIRECTORY:** It contains all the raw data and results from the simulation experiments.
 
 ## INSTALLATION
-INSTALL THE FOLLOWING LIBRARIES FOR PYTHON.
+Install the following libraries in python.
 ```BASH
 PIP INSTALL NUMPY
 PIP INSTALL MATPLOTLIB 
@@ -82,19 +82,19 @@ PIP INSTALL PYGAME
 ```
 
 ## USAGE
-
-TO RUN THE SIMULATION IN BATCH MODE EXECUTE THE FOLLOWING COMMAND IN THE BASE DIRECTORY.
-```PYTHON
-PYTHON3 GAMEENGINE.PY BATCH
+To run the simulation in batch mode execute the following command in the base directory.
+```python
+Python3 gameengine.Py batch
 ```
 
-TO RUN THE SIMULATION IN GUI MODE, EXECUTE THE FOLLOWING COMMAND IN THE BASE DIRECTORY.
-```PYTHON
-PYTHON3 GAMEENGINE.PY GUI
+To run the simulation in gui mode, execute the following command in the base directory.
+```python
+Python3 gameengine.Py gui
 ```
 
-USE THE PLOT PYTHON FILES AND CHANGE THE DIRECTORY STURCTURE FOR THE INPUT FILES TO LOOK AT THE ANALYSIS REPORT OF THE SIMULATION.
-**THE NEXT VERSION WOULD RESOLVE THIS NASTY DIRECTORY CHANGE ISSUE. SORRY ABOUT THIS FOR THE TIME BEING.** 
+Use the plot python files and change the directory sturcture for the input files to look at the analysis report of the simulation.
+
+**the next version would resolve this nasty directory change issue. Sorry about this for the time being.**
 
 Example analysis figures:
 ![FD](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/flux_analysis.png)
