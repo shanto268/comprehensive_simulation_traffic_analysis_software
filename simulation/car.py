@@ -79,7 +79,7 @@ class Car:
         self.lanechngL0 += 1
         Car.L0.append(self.lanechngL0)
     
-    
+   #p(lc) = numer / denum = number of times agent changed lane with the desired action / total times agent changed lane  
     def updateLaneLogic(self):
         if self.willingToChangeUp():
             self.denumer += 1
