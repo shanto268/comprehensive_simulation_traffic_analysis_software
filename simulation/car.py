@@ -338,9 +338,13 @@ class Car:
         return self.road.possibleLaneChangeDown(self.pos) and self.__willingToChangeLane(self.pos[1], self.pos[1] + 1)
     #regular 
 
-    def __willingToChangeLane(self, sourceLane, destLane):                           
-        srcLaneSpeed =  self.road.getMaxSpeedAt( (self.pos[0], sourceLane) )  #gets max speed at sourcelane
-        destLaneSpeed =  self.road.getMaxSpeedAt( (self.pos[0], destLane) )#gets max speed at destlane
+    def __willingToChangeLane(self, sourceLane, destLane):            
+        if self.pos[0] < (self.road.getLength() - 5) and self.pos[0] >= 0:
+            srcLaneSpeed =  self.road.getMaxSpeedAt( (self.pos[0], sourceLane) )  #gets max speed at sourcelane
+            destLaneSpeed =  self.road.getMaxSpeedAt( (self.pos[0], destLane) )#gets max speed at destlane
+        elif self.pos[0] < self.road.getLength() and self.pos[0] >= (self.road.getLength() - 5):
+            srcLaneSpeed =  self.road.d2n( (self.pos[0], sourceLane) )  #gets max speed at sourcelane
+            destLaneSpeed =  self.road.d2n( (self.pos[0], destLane) )#gets max speed at destlane
         if destLaneSpeed <= srcLaneSpeed: return False #no incentive
         prevCar = self.road.findPrevCar( (self.pos[0], destLane) )  #NaSch lane change rule safety
         if prevCar == None: return True #safety check 1
