@@ -1,9 +1,13 @@
+To Do:
+    Implement speed limits in the program
+
 Factors:
     1) traffic density
     2) speed of lead HV of leader AV car
     3) direction of blockade
         i) horizontal - speed breakers
         ii) vertical - lane construction or broken roads 
+    4) Distribution of HVs and free lanes
 
 Experiment:
     1) speed breakers simulate
