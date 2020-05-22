@@ -1,0 +1,10 @@
+Factors:
+    1) traffic density
+    2) speed of lead HV of leader AV car
+    3) direction of blockade
+        i) horizontal - speed breakers
+        ii) vertical - lane construction or broken roads 
+
+Experiment:
+    1) speed breakers simulate
+    2) brokeb road simulate

@@ -360,38 +360,3 @@ class Car:
             distanceToPrevCar = self.pos[0] - prevCar.pos[0] #safety check 1
             return distanceToPrevCar > prevCar.velocity
         
-    
-    def dyn_willingToChangeUp(self):
-        return self.road.dyn_possibleLaneChangeUp(self.pos) and self.dyn__willingToChangeLane(self.pos[1], self.pos[1] - 1)
-    
-    def dyn_willingToChangeDown(self):
-        return self.road.dyn_possibleLaneChangeDown(self.pos) and self.dyn__willingToChangeLane(self.pos[1], self.pos[1] + 1)
-    
-    def dyn__willingToChangeLane(self, sourceLane, destLane):                          
-        srcLaneSpeed = self.road.getMaxSpeedAt( (self.pos[0], sourceLane) ) #gets speed
-        destLaneSpeed = self.road.getMaxSpeedAt( (self.pos[0], destLane) ) #gets speed
-        if destLaneSpeed <= srcLaneSpeed or destLane == 0: return False #no incentive
-        prevCar = self.road.findPrevCar( (self.pos[0], destLane) )  #NaSch lane change rule safety
-        if prevCar == None: return True #safety check 1
-        else:
-            distanceToPrevCar = self.pos[0] - prevCar.pos[0] #safety check 1
-            return distanceToPrevCar > prevCar.velocity #True only if no collision    
-        
-    def dynav_willingToChangeUp(self):
-        return self.road.dynav_possibleLaneChangeUp(self.pos) and self.dynav__willingToChangeLane(self.pos[1], self.pos[1] - 1)
-    
-    def dynav_willingToChangeDown(self):
-        return self.road.dynav_possibleLaneChangeDown(self.pos) and self.dynav__willingToChangeLane(self.pos[1], self.pos[1] + 1)
-    
-    def dynav__willingToChangeLane(self, sourceLane, destLane):                          
-        srcLaneSpeed = self.road.getMaxSpeedAt( (self.pos[0], sourceLane) ) #gets speed
-        destLaneSpeed = self.road.getMaxSpeedAt( (self.pos[0], destLane) ) #gets speed
-        if destLaneSpeed <= srcLaneSpeed: return False #no incentive --> Might need to change this
-        prevCar = self.road.findPrevCar( (self.pos[0], destLane) )  #NaSch lane change rule safety
-        if prevCar == None or destLane == 0: return True #safety check 1
-        else:
-            distanceToPrevCar = self.pos[0] - prevCar.pos[0] #safety check 1
-            return distanceToPrevCar > prevCar.velocity #True only if no collision
-    
-    
-    
