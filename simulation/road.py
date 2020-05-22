@@ -77,6 +77,7 @@ class Road:
         self.avpercent = 18    #case: AV   12 -  20%    9 - 15% ; 18 - 30%  ; 30 - 50%;  45 - 75%  
         self.carStack = [] 
         self.typecar = 2
+        self.countAv= 0
     
     def __updateCars(self, action):
         for lane in self.lanes:
@@ -181,18 +182,27 @@ class Road:
             return True 
         else:
             return False
-
+    
+    #working
     def pushCars(self, amount): #amount comes from TG
         return self.__dpushCars(amount)
     
+    #working traffic generator
     def __dpushCars(self, amount): #if car pushed then return 1, if not then 0 -->HETERO
         #vtype = 1 HV ; VTYPE = 2 AV
-        if not amount: return 0
+        self.countAv += 1 
+        if (self.countAv <= numAV):
+            self.typecar = 2
+        else:
+            self.typecar = 1
+        print("amount ", amount)
+        if not amount: 
+            return 0
         else:
             for index in range(amount):
                 lane = random.randint(0,2)
                 car = Car(self, (random.randint(0,self.getLength()-1), lane), self.speedLimits.maxSpeed, self.typecar)
-                self.typecar = 1
+            #    self.typecar = 1
                 if(self.placeObject(car)): #if true --> object in desired position is not blocked
                     return 1 + self.__dpushCars(amount - 1)
                 else: 
@@ -202,7 +212,7 @@ class Road:
     def pushCarsRandomly(self, amount): #does what the name suggests
         lanes = [x for x in range(self.getLanesCount())] 
         random.shuffle(lanes) #changes lane order
-       # print("lane order " +str(lanes))
+        print("lane order " +str(lanes))
         return self.__pushCars(amount, lanes)
    
     def gtpushcars(self, inflow):
@@ -281,6 +291,7 @@ class Road:
                 return 1 + self.t__pushCars(amount - 1, lanes) #recursive condition that counts number of cars enterring
             else:
                 return self.t__pushCars(amount, lanes)     
+   
     def carcount(self):        
         for lane in self.lanes:
             none = lane[0:119].count(None)

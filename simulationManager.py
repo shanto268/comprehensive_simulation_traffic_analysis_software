@@ -10,7 +10,7 @@ class SimulationManager:
         self.trafficGenerator = trafficGenerator
         self.updateFrame = updateFrame
         self.acc = 0
-        self.timeFactor = 2000.0
+        self.timeFactor = 1.0
         self.prevTimeFactor = 1.0
         self.running = True
         self.stepsMade = 0
@@ -63,8 +63,9 @@ class SimulationManager:
     def __pauseSwitch(self):
         self.timeFactor, self.prevTimeFactor = self.prevTimeFactor, self.timeFactor
     def __speedUp(self): 
-        self.timeFactor = min(8.0, self.timeFactor*2)
-
+        #self.timeFactor = min(8.0, self.timeFactor*2)
+        self.timeFactor = self.timeFactor*2
+   
     def __speedDown(self): 
         self.timeFactor = max(1/8, self.timeFactor/2)
 
