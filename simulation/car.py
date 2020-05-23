@@ -97,8 +97,8 @@ class Car:
                 self.pos = self.pos[0], self.pos[1]+1
                 if self.pos[1] == 2:
                     self.lanecountL0()
-        if self.denumer != 0 and self.vtype == 2: #SAS 2020
-            print("P(lc): " + str(float(self.numer /self.denumer)))
+     #   if self.denumer != 0 and self.vtype == 2: #SAS 2020
+     #       print("P(lc): " + str(float(self.numer /self.denumer))) #SAS 2020 May
     ''' new code '''
     def dynamicupdateLane(self):
         self.prevPos = self.pos
