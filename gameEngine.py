@@ -8,7 +8,6 @@ class caEnv_v0():
         self.config = config
         self.data = config.data
         print(self.data)
-
     #def reset(self):
     #def step(self,action):
         
@@ -65,7 +64,7 @@ class caEnv_v0():
 
 
 # main
-config = importlib.import_module('config.slowdown')
+config = importlib.import_module('config.case')
 mode = sys.argv[1]
 env = caEnv_v0(config)
 if mode=="batch":

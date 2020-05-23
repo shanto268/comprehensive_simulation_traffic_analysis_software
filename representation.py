@@ -63,14 +63,14 @@ class Representation():
             pygame.draw.rect(self.screen, ( 180, 180, 180), (realPos[0], realPos[1], self.cellSize, self.cellSize), 0) 
     
     def drawCellSpeedLimits(self, x, y, speedLimit):
-            spld = self.speedLimitData[0]
-            flag = spld.active
-            realPos = self.__getPosOnScreen((x,y)) #needs change
-            factor = 60 + speedLimit*30
-            pygame.draw.rect(self.screen, (factor,factor,factor) , (realPos[0], realPos[1], self.cellSize, self.cellSize), 0)
-            #if (flag):
-                #pygame.draw.rect(self.screen, (130,130,130), ( (spld.xPos[0], spld.lanes[0]), (spld.xPos[1], spld.lanes[1]), self.cellSize, self.cellSize), 0)
-                
+        if (len(self.speedLimitData)>0):
+                spld = self.speedLimitData[0]
+                realPos = self.__getPosOnScreen((x,y)) #needs change
+                factor = 60 + speedLimit*30
+                pygame.draw.rect(self.screen, (factor,factor,factor) , (realPos[0], realPos[1], self.cellSize, self.cellSize), 0)
+        else:
+                self.__drawCell(x, y, speedLimit)  #original
+
 
     def __drawCar(self,car, x, y): #include param for type
         invProgress = (1 - self.acc / self.updateFrame)*self.cellSize

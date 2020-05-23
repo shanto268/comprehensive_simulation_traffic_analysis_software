@@ -8,13 +8,13 @@ from simulation.trafficGenerators import *
 
 #sim data
 #data = ["trial.txt",50,5,3,3,3,0.8,0.8,0.4,0.4,1,10]    
-data = ["test_trial.txt", 24, 5, 5, 4, 3, 1, 0.6, 0, 0.4, 7, 20]# low density aware and oppo
+data = ["test_trial.txt", 24, 5, 5, 4, 3, 1, 0.6, 0, 0.4, 17, 20]# low density aware and oppo
 
 #constants
 maxFps= 2000 #default = 40 , fast = 10, nice = 500
 size = width, heigth = 1250, 500
 updateFrame = 2000 #default = 500, fast = 10 , nice 500
-seed = 4
+seed = None
 lanes = 3
 length = 100
 
@@ -22,6 +22,7 @@ numCar = int(data[1])
 trafficGenerator = TrafficGenerator(numCar) #density 0.08= 24, 0.2 = 60, 0.6 = 180 , 0.4 = 120    #if 15 then that means increase system density linearly
 speedLimits = []
 maxSpeed = int(data[2])
+#speedLimits = [ SpeedLimit( ((0,2), (99,2)), limit=2, ticks=60) ]
 
 #printing onto console
 def printData():
