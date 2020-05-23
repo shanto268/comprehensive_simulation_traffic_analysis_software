@@ -1,5 +1,4 @@
 To Do:
-    Change color of road.
     Do the experiments.
         Write paper.
     Think about previous experiment on lane changing.

@@ -4,7 +4,7 @@ from simulation.trafficGenerators import *
 import math as mp
 
 class Representation():
-    def __init__(self, screen, road, simulationManager, data):
+    def __init__(self, screen, road, simulationManager, data, speedLimit):
         self.screen = screen
         self.width, self.heigth = screen.get_width(), screen.get_height()
         self.road = road
@@ -14,10 +14,12 @@ class Representation():
         self.acc = 0
         self.theta = 0
         self.data = data
+        self.speedLimitData = speedLimit
         self.infoDisplayer = InfoDisplayer(screen, road, simulationManager, data)
         self.colors = [ (255, 0, 0), (180, 20, 0), (80, 60, 0), (100, 80, 0), (0, 180, 0), (0, 255, 0), (80, 120, 0), (60, 140, 0), (40, 160, 0) ]
         self.colors1 = [(39,64,139), (205,0,0)] #hv blue
-
+        self.roadColors = [(180,180,180),(130,130,130)]
+        
     def draw(self, dt):#updates simulation
         self.__updateAcc(dt) #updates infodisplayer
         self.screen.fill( (0,100,0) ) #background
@@ -42,7 +44,8 @@ class Representation():
         for cell in lane: #cell stores the value (i.e. None if empty or car object if car object!) it is the element
             idx = x / self.cellSize, y / self.cellSize #each grid id in coordinates (x,y)
             speedLimit = self.road.getSpeedLimitAt(idx)
-            self.__drawCell(x, y, speedLimit) 
+        #    self.__drawCell(x, y, speedLimit)  #original
+            self.drawCellSpeedLimits(x,y,speedLimit) #new addition
             if cell != None:             
                 self.__drawCar(cell, x, y)
             x += self.cellSize #the width of the road
@@ -60,11 +63,14 @@ class Representation():
             pygame.draw.rect(self.screen, ( 180, 180, 180), (realPos[0], realPos[1], self.cellSize, self.cellSize), 0) 
     
     def drawCellSpeedLimits(self, x, y, speedLimit):
+            spld = self.speedLimitData[0]
+            flag = spld.active
             realPos = self.__getPosOnScreen((x,y)) #needs change
-            pygame.draw.rect(self.screen, ( 180, 180, 180), (realPos[0], realPos[1], self.cellSize, self.cellSize), 0) 
-           #include new colors 
-           #import config
-           #include speed and ticks from config file
+            factor = 60 + speedLimit*30
+            pygame.draw.rect(self.screen, (factor,factor,factor) , (realPos[0], realPos[1], self.cellSize, self.cellSize), 0)
+            #if (flag):
+                #pygame.draw.rect(self.screen, (130,130,130), ( (spld.xPos[0], spld.lanes[0]), (spld.xPos[1], spld.lanes[1]), self.cellSize, self.cellSize), 0)
+                
 
     def __drawCar(self,car, x, y): #include param for type
         invProgress = (1 - self.acc / self.updateFrame)*self.cellSize

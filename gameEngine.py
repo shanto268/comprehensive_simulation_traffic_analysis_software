@@ -27,7 +27,7 @@ class caEnv_v0():
         speedLimits = simulation.speedLimits.SpeedLimits(config.speedLimits, config.maxSpeed)
         road = simulation.road.Road(config.lanes, config.length, speedLimits) 
         simulation_ = SimulationManager(road, config.trafficGenerator, config.updateFrame) 
-        representation = Representation(screen, road, simulation_, config.data)
+        representation = Representation(screen, road, simulation_, config.data, config.speedLimits)
         while simulation_.running:
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:

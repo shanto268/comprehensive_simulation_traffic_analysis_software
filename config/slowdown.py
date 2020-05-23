@@ -15,7 +15,7 @@ updateFrame = 500
 
 seed = None
 lanes = 3
-length = 100
+length = 300
 
 numCar = int(data[1])
 trafficGenerator = TrafficGenerator(numCar) #density 0.08= 24, 0.2 = 60, 0.6 = 180 , 0.4 = 120    #if 15 then that means increase system density linearly
@@ -23,15 +23,17 @@ trafficGenerator = TrafficGenerator(numCar) #density 0.08= 24, 0.2 = 60, 0.6 = 1
 maxSpeed = int(data[2])
 
 #maxLength = 1000
-"""
 speedLimits = [
         SpeedLimit(((70, 0), (130, lanes-1)), limit=3, ticks=0),
         SpeedLimit(((200, 0), (260, 0)), limit=0, ticks=0),
         SpeedLimit(((200, 2), (260, 2)), limit=0, ticks=0)
         ]
-"""
+t = random.randint(7,13)
+l = 6
 
-speedLimits = [ SpeedLimit(((0,0),(100,0)), limit=0, ticks=20)]
+#blinking entry and traffic lights
+#speedLimits = [SpeedLimit(((7, 0), (7,3)), limit=0, ticks=t, active = True)] + [SpeedLimit(((l , 0), (l ,3)), limit=0, ticks=100, active = True)] #tick = non_zero_number = traffic light
+
 
 def printData():
     print("\n")
