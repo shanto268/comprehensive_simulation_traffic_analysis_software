@@ -65,7 +65,7 @@ class caEnv_v0():
 
 
 # main
-config = importlib.import_module('config.case')
+config = importlib.import_module('config.slowdown')
 mode = sys.argv[1]
 env = caEnv_v0(config)
 if mode=="batch":

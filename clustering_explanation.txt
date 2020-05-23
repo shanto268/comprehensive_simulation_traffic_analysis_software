@@ -1,6 +1,10 @@
 To Do:
-    Implement speed limits in the program
-
+    Change color of road.
+    Do the experiments.
+        Write paper.
+    Think about previous experiment on lane changing.
+    Change 5 to speedlimits methods.
+    Incorporate maximum speed into speedLimits.
 Factors:
     1) traffic density
     2) speed of lead HV of leader AV car

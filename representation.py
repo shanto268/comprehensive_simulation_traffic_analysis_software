@@ -58,8 +58,14 @@ class Representation():
     def __drawCell(self, x, y, speedLimit): #draws the road cells
             realPos = self.__getPosOnScreen((x,y)) #needs change
             pygame.draw.rect(self.screen, ( 180, 180, 180), (realPos[0], realPos[1], self.cellSize, self.cellSize), 0) 
+    
+    def drawCellSpeedLimits(self, x, y, speedLimit):
+            realPos = self.__getPosOnScreen((x,y)) #needs change
+            pygame.draw.rect(self.screen, ( 180, 180, 180), (realPos[0], realPos[1], self.cellSize, self.cellSize), 0) 
+           #include new colors 
+           #import config
+           #include speed and ticks from config file
 
-        
     def __drawCar(self,car, x, y): #include param for type
         invProgress = (1 - self.acc / self.updateFrame)*self.cellSize
         offset = (car.prevPos[0] - car.pos[0])*invProgress, (car.prevPos[1] - car.pos[1])*invProgress
