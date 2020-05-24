@@ -1,3 +1,5 @@
+# Defining a circular array attempt
+
 import pygame
 import numpy as np
 
