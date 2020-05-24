@@ -23,7 +23,7 @@ class Road:
     def __init__(self, lanesCount, length, speedLimits):
         self.lanes = Road.generateEmptyLanes(lanesCount, length) #functional call to create empty lanes using user input -> returns desired number of lanes with desired number of length with None values as elements
         self.updatedLanes = Road.generateEmptyLanes(lanesCount, length) #same as above but used to update the elements of the created structure
-        self.speedLimits = speedLimits if speedLimits != None else simulation.speedLimits.SpeedLimits([], 5) #refers to speedlimits.py to set speedlimits
+        self.speedLimits = speedLimits if speedLimits != None else simulation.speedLimits.SpeedLimits([], maxSpeed) #refers to speedlimits.py to set speedlimits
         self.deadAV = 0 # cars that are gone
         self.updates = 0 #number of updates?
         self.deadCars = 0
@@ -78,7 +78,8 @@ class Road:
         self.carStack = [] 
         self.typecar = 2
         self.countAv= 0
-    
+        self.clusterGapLimit = 5 
+
     def __updateCars(self, action):
         for lane in self.lanes:
             for entity in lane:
@@ -765,9 +766,6 @@ class Road:
      #   print("Total number of clusters: " + str(len(final)))        
      #   print(self.clsize)  
        # print("")  
-
-        
-        
         
     def lane_form(self):          
         
@@ -807,7 +805,7 @@ class Road:
             j+=1 
             if j < len(carstype_0l) and carstype_0l[i] == carstype_0l[j] == 2:
                 lane_size += 1
-        if (lane_size + 1) >= 5:
+        if (lane_size + 1) >= self.clusterGapLimit:
             self.laneform_count += 1
             self.laneform_size.append(lane_size+1)
         lane_size = 0
@@ -816,7 +814,7 @@ class Road:
             j+=1 
             if j < len(carstype_1l) and carstype_1l[i] == carstype_1l[j] == 2:
                 lane_size += 1
-        if (lane_size + 1) >= 5:
+        if (lane_size + 1) >= self.clusterGapLimit:
             self.laneform_count += 1
             self.laneform_size.append(lane_size+1)
         lane_size = 0
@@ -826,7 +824,7 @@ class Road:
             j+=1 
             if j < len(carstype_2l) and carstype_2l[i] == carstype_2l[j] == 2:
                 lane_size += 1
-        if (lane_size + 1) >= 5:
+        if (lane_size + 1) >= self.clusterGapLimit:
             self.laneform_count += 1
             self.laneform_size.append(lane_size + 1)
         lane_size = 0        

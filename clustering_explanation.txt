@@ -1,17 +1,16 @@
 To Do:
-    Do the experiments.
-        Write paper.
+    Circular representation
+    Write paper.
     Think about previous experiment on lane changing.
-    Change 5 to speedlimits methods.
-    Incorporate maximum speed into speedLimits.
+    
 Factors:
     1) traffic density
     2) speed of lead HV of leader AV car
-    3) direction of blockade
-        i) horizontal - speed breakers
-        ii) vertical - lane construction or broken roads 
-    4) Distribution of HVs and free lanes
+    3) Distribution of HVs and free lanes
+    4) Radius of circle -> the higher the more lane formation
+    5) speed of AVs
+    6) Proportion of AV:HV -> the higher the more lane formation
 
 Experiment:
     1) speed breakers simulate
-    2) brokeb road simulate
+    2) broken road simulate

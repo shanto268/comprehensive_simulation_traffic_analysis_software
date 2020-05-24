@@ -99,4 +99,9 @@ Use the plot python files and change the directory sturcture for the input files
 Example analysis figures:
 ![FD](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/flux_analysis.png)
 
-
+# To Do:
+- [ ] GUI interface creation
+- [ ] FD Creation Mode
+- [ ] Full Customization through GUI integration
+- [ ] Circular Road Representation
+- [ ] Website creation with front end and back end of this software
