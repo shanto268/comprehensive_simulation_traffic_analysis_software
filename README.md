@@ -100,6 +100,8 @@ Example analysis figures:
 ![FD](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/flux_analysis.png)
 
 # To Do:
+- [ ] Need to fix the SimpleTrafficGenerator method
+- [ ] Need to implement mode for highway sim and not only circular road
 - [ ] GUI interface creation
 - [ ] FD Creation Mode
 - [ ] Full Customization through GUI integration
