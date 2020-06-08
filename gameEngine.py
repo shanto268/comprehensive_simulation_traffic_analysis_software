@@ -64,7 +64,8 @@ class caEnv_v0():
 
 
 # main
-config = importlib.import_module('config.case')
+configFile = sys.argv[2]
+config = importlib.import_module('config.'+configFile)
 mode = sys.argv[1]
 env = caEnv_v0(config)
 if mode=="batch":
